@@ -80,7 +80,7 @@
             <div class="flex flex-col md:flex-row md:justify-between items-start mb-8">
                 <!-- Logo -->
                 <div class="mb-6 md:mb-0">
-                    <h1 class="text-2xl font-bold cursor-pointer">{Finsweet}</h1>
+                    <h1 class="text-2xl font-bold cursor-pointer">&#123;Finsweet</h1>
                 </div>
 
                 <!-- Navigation -->
