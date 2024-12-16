@@ -5,60 +5,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog | Home</title>
+    <title>Finsweet</title>
     @vite('resources/css/app.css')
 </head>
 
-<body class="h-screen bg-slate-200">
-    <nav class="z-[1000] text-white p-5 bg-[#232536] shadow md:flex md:items-center md:justify-between">
+<body class="bg-gray-900">
 
-        {{-- Logo --}}
-        <div>
-            <span class="text-3xl font-bold italic">
-                <a href="" class="cursor-pointer">Blog</a>
+
+    <!-- Navbar -->
+    <nav class="px-6 md:px-20 py-6 bg-[#232536] shadow md:flex md:items-center md:justify-between">
+        <!-- Logo & Hamburger -->
+        <div class="flex justify-between items-center">
+            <span class="text-xl font-bold cursor-pointer">
+                <a href="#" class="text-white">&#123;Finsweet</a>
             </span>
 
-            <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+            <!-- Hamburger Menu -->
+            <span id="hamburger" class="text-white text-3xl cursor-pointer mx-2 md:hidden block">
                 <ion-icon name="menu" onclick="Menu(this)"></ion-icon>
             </span>
         </div>
 
-        {{-- Menu --}}
-        <ul
-            class="md:flex md:items-center md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 md:pl-0 pl-7 md:opacity-0 top-[-400px] transition-all ease-in duration-300">
-            <li>
-                <a href="">Home</a>
+        <!-- Navigation Links -->
+        <ul id="navMenu"
+            class="md:flex md:items-center md:static absolute bg-white md:bg-transparent top-[-400px] w-full md:w-auto left-0 md:py-0 py-6 md:pl-0 pl-7 transition-all duration-300 ease-in shadow md:shadow-none opacity-0 md:opacity-100 z-10">
+            <li class="mx-4 md:my-0">
+                <a href="#" class="text-gray-800 md:text-white text-md hover:text-gray-400 duration-300">Home</a>
             </li>
-            <li>
-                <a href="">Blogs</a>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#"
+                    class="text-gray-800 md:text-white text-md hover:text-gray-400 duration-300">Blog's</a>
             </li>
-            <li>
-                <a href="">About</a>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-gray-800 md:text-white text-md hover:text-gray-400 duration-300">About
+                    Us</a>
             </li>
-            <li>
-                <a href="">Contact</a>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-gray-800 md:text-white text-md hover:text-gray-400 duration-300">Contact
+                    Us</a>
             </li>
-
-            <!-- Signin dan Signup Button -->
             <button
-                class="mx-4 my-2 border border-[#4baedf] text-sm md:text-base text-[#4baedf] px-5 py-2 rounded-md font-semibold hover:bg-[#4baedf] hover:text-white transition duration-300">
-                Signin
-            </button>
-            <button
-                class="mx-4 my-2 md:my-0 bg-[#4baedf] text-sm md:text-base text-white px-5 py-2 rounded-md font-semibold hover:bg-[#3a8bbd] transition duration-300">
-                Signup
+                class="bg-black text-white md:bg-white md:text-black font-semibold duration-300 hover:bg-gray-700 rounded px-6 py-2 mx-4">
+                Subscribe
             </button>
         </ul>
     </nav>
-    <h1 class="text-red-500">Hello Laravel</h1>
 
 
-    {{-- Ionicons --}}
+    <main class="container mt-12 px-20">
+        <h1 class="text-red-600">Hello</h1>
+    </main>
+
+    <footer class="bg-[#232536] py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-gray-300">© 2023 Finsweet. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        function Menu(e) {
+            let list = document.querySelector('ul');
+            e.name === 'menu' ? (e.name = "close", list.classList.add('top-[80px]'), list.classList.add('opacity-100')) : (e
+                .name = "menu", list.classList.remove('top-[80px]'), list.classList.remove('opacity-100'))
+        }
+
+        // Tutup menu saat klik di luar menu
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.getElementById('hamburger').children[0]; // Ambil ion-icon di dalam span
+            const isClickInsideMenu = navMenu.contains(event.target);
+            const isClickOnHamburger = hamburger === event.target;
+
+            // Jika klik di luar menu dan bukan di hamburger icon
+            if (!isClickInsideMenu && !isClickOnHamburger && hamburger.name === 'close') {
+                hamburger.name = "menu";
+                navMenu.classList.remove('top-[80px]');
+                navMenu.classList.remove('opacity-100');
+            }
+        });
+    </script>
+
+    {{-- Ionics Icons --}}
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    {{-- Script JS --}}
-    <script src="{{ asset('asset/js/script.js') }}"></script>
 </body>
 
 </html>
