@@ -7,13 +7,13 @@ Route::get('/', function () {
 });
 
 Route::get('/blogs', function () {
-    return view('blogs');
+    return view('pages.blogs');
 })->name('blogs');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('pages.about');
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('pages.contact');
 })->name('contact');
