@@ -16,7 +16,9 @@
 
 
     {{-- main section --}}
-    {{ $slot }}
+    <main>
+        {{ $slot }}
+    </main>
 
     <!-- Footer Section -->
     <footer class="bg-[#232536] text-white py-8 px-6 md:px-16">
