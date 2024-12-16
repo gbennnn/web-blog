@@ -1,4 +1,6 @@
-<x-layout>
+{{-- @section('title', 'Home') --}}
+
+<x-layout title="Home">
     <!-- Hero Section -->
     <section class="relative h-screen text-white py-20 px-6 md:px-20">
         <div class="absolute top-0 left-0 w-full h-full bg-cover bg-center -z-10"
