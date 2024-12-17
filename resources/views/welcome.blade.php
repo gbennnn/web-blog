@@ -17,4 +17,65 @@
                 More ></a>
         </div>
     </section>
+
+    <section class="relative mx-auto py-20 px-6 md:px-20">
+        <!-- Featured Post -->
+        <h1 class="text-2xl md:text-3xl font-bold mb-6">Featured Post</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Featured Post -->
+            <div class="lg:col-span-2 bg-white shadow-md rounded-lg overflow-hidden">
+                <img src="{{ asset('asset/img/features.png') }}" alt="Featured Post" class="w-full h-60 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">
+                        By <span class="text-indigo-600">John Doe</span> | May 23, 2022
+                    </p>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                    </h2>
+                    <p class="text-gray-600 mb-4">
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Exceptuer sint occaecat cupidatat non proident.
+                    </p>
+                    <a href="#"
+                        class="inline-block bg-yellow-400 text-gray-800 font-semibold px-4 py-2 rounded-lg">Read More
+                        →</a>
+                </div>
+            </div>
+
+            <!-- All Posts -->
+
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold mb-6">All Post</h1>
+                <div class="space-y-4">
+                    <div class="p-4 bg-white rounded-lg shadow-md hover:bg-yellow-100 cursor-pointer transition">
+                        <p class="text-sm text-gray-500">
+                            By <span class="text-indigo-600">John Doe</span> | Aug 23, 2021
+                        </p>
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            8 Figma design systems that you can download for free today.
+                        </h3>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md hover:bg-yellow-100 cursor-pointer transition">
+                        <p class="text-sm text-gray-500">
+                            By <span class="text-indigo-600">John Doe</span> | Aug 23, 2021
+                        </p>
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            8 Figma design systems that you can download for free today.
+                        </h3>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-md hover:bg-yellow-100 cursor-pointer transition">
+                        <p class="text-sm text-gray-500">
+                            By <span class="text-indigo-600">John Doe</span> | Aug 23, 2021
+                        </p>
+                        <h3 class="text-lg font-semibold text-gray-800">
+                            8 Figma design systems that you can download for free today.
+                        </h3>
+                    </div>
+                </div>
+                <div class="mt-6 text-right">
+                    <a href="#" class="text-indigo-600 hover:underline font-medium">View All →</a>
+                </div>
+            </div>
+        </div>
+    </section>
 </x-layout>
